@@ -1,9 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import React from 'react'
-import MainRoures from './routes/Approutes'
-import Forgetpassword from "./Auth/ForgetPassword"
 import './index.css'
-
+import Approutes from "./routes/Approutes"
 createRoot(document.getElementById('root')).render(
-<MainRoures/>
+<Approutes/>
 )
