@@ -3,7 +3,9 @@ import React from "react"
 import Logo from "../assets/images/logo.png"
 import Input from '../Auth/Input'
 import  Button from '../components/common/button/Button'
+import { useNavigate } from "react-router-dom"
 export default function Login() {
+  const nav=useNavigate();
   return (
     <div>
       <Main>
@@ -18,7 +20,7 @@ export default function Login() {
             <form action="" className="w-[95%]">
                 <Input label='البريد الالكتروني' type={"email"} name={'email'}/>
                 <Input label='كلمة المرور' type={"password"} name={'password'}/>
-                <p className="text-[14px] font-[400] text-[#AFAFAF] cursor-pointer">نسيت كلمة المرور؟</p>
+                <p className="text-[14px] font-[400] text-[#AFAFAF] cursor-pointer" onClick={()=>nav('ForgetPassword')}>نسيت كلمة المرور؟</p>
                 <Button text={'تسجيل دخول'} color='#1A7474'/>
             </form>
         </div>

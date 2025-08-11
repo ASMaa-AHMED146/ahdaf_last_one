@@ -7,7 +7,10 @@ const Mainlayout =lazy(()=>import("../layouts/mainlayout"))
 const Authlayout =lazy(()=>import("../layouts/authlayout"));
 
 //import pages
-const Login =lazy(()=>import("../Auth/Login"))
+const Login =lazy(()=>import("../Auth/Login"));
+const Createnewpassword =lazy(()=>import("../Auth/Createnewaccount"));
+const ForgetPassword =lazy(()=>import("../Auth/ForgetPassword"));
+const Verfication =lazy(()=>import("../Auth/Verification"));
 const Register =lazy(()=>import("../Auth/Createnewaccount"));
 const Home =lazy(()=>import("../pages/Home"));
 const Services =lazy(()=>import('../pages/Services'));
@@ -89,11 +92,19 @@ const router=createBrowserRouter([{
     element:(
       <Login/>
     )
-  },
+  }
+  ,
   {
     path:'login',
     element:(
       <Register/>
+    )
+  }
+  ,
+  {
+    path:'forgetPassword',
+    element:(
+      <ForgetPassword/>
     )
   }
 ]
