@@ -1,9 +1,10 @@
 import React from 'react'
+import Homebackgroundsection from "../components/sections/Homebackgroundsection"
 
 export default function Home() {
   return (
     <div>
-      Home
+      <Homebackgroundsection/>
     </div>
   )
 }

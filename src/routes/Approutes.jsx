@@ -1,6 +1,9 @@
 import React, { lazy } from 'react'
 import { Suspense } from 'react';
 import { createBrowserRouter,RouterProvider } from 'react-router-dom';
+//pagecallback
+import PageSuspenseFallback from "../components/feedback/PageSuspenseFallback/PageSuspenseFallback"
+import LottieHandler from '../components/feedback/LottieHandler/LottieHandler';
 
 //layouts
 const Mainlayout =lazy(()=>import("../layouts/mainlayout"))
@@ -26,7 +29,11 @@ const Blog =lazy(()=>import("../pages/Blog"));
 const router=createBrowserRouter([{
   path:'/',
   element:(
-    <Suspense>
+    <Suspense fallback={
+      <div>
+        <LottieHandler type='loading' message="Loading please wait..."/>
+      </div>
+    } >
       <Mainlayout/>
     </Suspense>
   ),errorElement:<Error/>,
@@ -34,19 +41,25 @@ const router=createBrowserRouter([{
     {
       index:true,
       element:(
-        <Home/>
+        <PageSuspenseFallback>
+          <Home/>
+        </PageSuspenseFallback>
       )
     },
     {
       path:'services',
       element:(
-        <Services/>
+       <PageSuspenseFallback>
+         <Services/>
+       </PageSuspenseFallback>
       )
     },
     {
       path:'packages',
       element:(
-        <Packages/>
+        <PageSuspenseFallback>
+          <Packages/>
+        </PageSuspenseFallback>
       )
     }
     ,
