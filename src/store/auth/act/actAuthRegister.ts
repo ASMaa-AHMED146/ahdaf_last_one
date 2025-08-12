@@ -11,6 +11,8 @@ const actAuthRegister=createAsyncThunk("auth/actAuthRegister",async (formdata,th
         console.log(res.data);
         return res.data;
     }catch(error){
+        console.log(error);
+        
         return rejectWithValue(axiosErrorHandler(error));
     }
 })

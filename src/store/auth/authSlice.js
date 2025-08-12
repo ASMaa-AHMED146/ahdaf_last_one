@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actAuthRegister from "./act/actAuthRegister";
+import { act } from "react";
 
 const initialState={
     user:null,
@@ -25,10 +26,10 @@ const authSlice=createSlice({
             state.loading='succeeded';
             console.log(action.payload);
         }).addCase(actAuthRegister.rejected,(state,action)=>{
-            state.loading='failed';
-            if (isString(action.payload)) {
+                state.loading='failed'; 
+                console.log(action.payload);
                 state.error = action.payload;
-            }
+            
         })
     }
 })

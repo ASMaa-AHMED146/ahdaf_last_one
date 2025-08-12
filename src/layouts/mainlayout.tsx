@@ -6,7 +6,7 @@ export default function mainlayout() {
   return (
     <div>
         <Header/>
-        <div>
+        <div className='h-[100vh]'>
             <Outlet/>
         </div>
         <Footer/>

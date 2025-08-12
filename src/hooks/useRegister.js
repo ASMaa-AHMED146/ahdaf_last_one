@@ -12,6 +12,8 @@ const useregister=()=>{
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const {loading,error}=useSelector((state)=>state.Auth);
+    console.log(error);
+    
     const {
     register,
     handleSubmit,
@@ -32,7 +34,7 @@ const useregister=()=>{
     return()=>{
         dispatch(resetUI());
     }
-  })
+  },[])
 
   return {loading,error,errors,submitForm,register,handleSubmit}
 
