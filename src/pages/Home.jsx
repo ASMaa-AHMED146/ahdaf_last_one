@@ -4,6 +4,7 @@ import Countersection from "../components/sections/Countersection"
 import ServicesSlider from "../components/sections/ServicesSlider"
 import useHome from "../hooks/useServices"
 import FeedbacksSection from "../components/sections/FeedbacksSection"
+import PackageHomeSection from "../components/sections/PackageHomeSection"
 {/* <CircularProgress /> */}
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <Countersection/>
       <ServicesSlider records={records}/>
       <FeedbacksSection/>
+      <PackageHomeSection/>
     </div>
   )
 }

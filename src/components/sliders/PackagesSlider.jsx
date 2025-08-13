@@ -17,8 +17,8 @@ export default function ServicesSlider({ children, title, paragraph }) {
         spaceBetween: 20
       },
       1024: {
-        slidesPerView: 4, // شاشة كبيرة (1024px فما فوق)
-        spaceBetween: 30
+        slidesPerView: 3, // شاشة كبيرة (1024px فما فوق)
+        spaceBetween: 50
       }
     },
     pagination: {
@@ -28,7 +28,7 @@ export default function ServicesSlider({ children, title, paragraph }) {
   };
 
   return (
-    <div className="w-full bg-orange-50 pt-5 md:px-12 px-5">
+    <div className="w-full bg-orange-50 pt-5 md:px-12 px-5 ">
       <div className="flex justify-between pt-10 pb-5 px-6">
         <div>
           <h1 className="text-3xl font-medium">{title}</h1>

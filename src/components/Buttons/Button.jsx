@@ -14,7 +14,7 @@ export default function Button({ nextSlide, prevSlide, isBeginning, isEnd }) {
   `;
 
   return (
-    <div className='flex border-[#1A7474] border-[1px] rounded-[20px] w-[80px] justify-center p-[5px]'>
+    <div className='flex border-[#1A7474] border-[2px] rounded-[20px] w-[80px] justify-center p-[5px]'>
       
       {/* زر الرجوع */}
       <div onClick={isBeginning ? null : prevSlide}>
