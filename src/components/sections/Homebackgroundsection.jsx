@@ -1,7 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import img from "../../assets/images/Egyptflag.jpg";
-// import img2 from "../../assets/images/Login.jpg";
-import img2 from "../../assets/images/UKFlag.png"
 import { IoSearchSharp } from "react-icons/io5";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -23,14 +20,11 @@ function Homebackgroundsection() {
   };
 
   const {images,loading,error}=useBackgroundimages();
-  console.log(images);
-  
-
 
   const nav = useNavigate();
   return (
     <>
-      <div className='px-[20px] py-[25px] md:pb-[40px] md:px-[40px] bg-[#FFF7F4]'>
+      <div className='px-[20px] py-[25px] md:pb-[40px] md:px-[40px] bg-[#FFF7F4] '>
         
         <div className=' relative rounded-[25px] text-white w-full h-[300px] md:h-[350px] lg:h-[650px]'>
           

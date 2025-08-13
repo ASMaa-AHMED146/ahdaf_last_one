@@ -1,2 +1,2 @@
 import axios from "axios";
-axios.defaults.baseURL='https://dubai.high-digitall.com/public/api';
+axios.defaults.baseURL='https://api.dubai-hotel-service.com/public';

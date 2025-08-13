@@ -12,8 +12,7 @@ const useregister=()=>{
     const dispatch=useDispatch();
     const navigate=useNavigate();
     const {loading,error}=useSelector((state)=>state.Auth);
-    console.log(error);
-    
+
     const {
     register,
     handleSubmit,
@@ -26,7 +25,6 @@ const useregister=()=>{
   });
 
   const submitForm =async(data)=>{
-    console.log(data);    
     dispatch(actAuthRegister(data))
   }
   

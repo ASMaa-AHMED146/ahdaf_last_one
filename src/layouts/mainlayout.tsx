@@ -6,7 +6,7 @@ export default function mainlayout() {
   return (
     <div>
         <Header/>
-        <div className='h-[100vh]'>
+        <div className=' bg-[#FFF7F4]'>
             <Outlet/>
         </div>
         <Footer/>

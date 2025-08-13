@@ -12,7 +12,7 @@ export default function Createnewaccount() {
   const state = useSelector((state) => state.Auth);
   const { loading, error, errors, submitForm, register, handleSubmit } = useregister();
 
-  console.log(error);
+
 
   return (
     <div>

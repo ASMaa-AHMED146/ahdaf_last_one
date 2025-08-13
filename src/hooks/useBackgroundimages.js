@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import axiosErrorHandler from '../utils/axiosErrorHandler'
-import { createAsyncThunk } from '@reduxjs/toolkit'
 import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import actGetservices from '../store/services/act/actGetServices';
 export default function useBackgroundimages() {
     const [images,setimages]=useState(null);
     const [loading,setloading]=useState(true);
     const [error,seterror]=useState(null);
+    const dispatch=useDispatch();
     useEffect(()=>{
         const getBackgroundImages=async ()=>{
             try{
@@ -20,5 +22,6 @@ export default function useBackgroundimages() {
         }
         getBackgroundImages();
     },[])
+    
   return {images,loading,error}
 }
