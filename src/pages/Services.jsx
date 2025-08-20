@@ -6,7 +6,8 @@ import actGetservices from "../store/services/act/actGetServices"
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress';
-import Commenqestion from '../components/sections/commonfaq'
+import Commenqestion from '../components/sections/commonfaq';
+import ClientOpininsSection from "../components/sections/ClientOpininsSection"
 
 
 export default function Services() {
@@ -33,6 +34,7 @@ export default function Services() {
           ))}
         </div>
       <Commenqestion/>
+      <ClientOpininsSection/>
     </div>
   )
 }
