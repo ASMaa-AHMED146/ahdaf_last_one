@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actAuthRegister from "./act/actAuthRegister";
-import { act } from "react";
+
 
 const initialState={
     user:null,

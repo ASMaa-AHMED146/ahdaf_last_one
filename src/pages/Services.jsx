@@ -8,6 +8,8 @@ import { useEffect } from 'react'
 import CircularProgress from '@mui/material/CircularProgress';
 import Commenqestion from '../components/sections/commonfaq';
 import ClientOpininsSection from "../components/sections/ClientOpininsSection"
+import {resetServices} from "../store/services/servicesSlice"
+
 
 
 export default function Services() {
@@ -17,10 +19,15 @@ export default function Services() {
 
   useEffect(() => {
     if (records.length === 0) {
-      dispatch(actGetservices());
+     const promise= dispatch(actGetservices());
     }
+    // return()=>{
+    //   promise.abort();
+    //   dispatch(resetServices())
+    // }
   }, [dispatch, records.length])
   const servicesdata=records ;
+  console.log(servicesdata)
   if (loading === 'pending') return <div className='h-full flex flex-col justify-center items-center pt-[50px]'>
     <CircularProgress/>
     جاري التحميل...</div>;

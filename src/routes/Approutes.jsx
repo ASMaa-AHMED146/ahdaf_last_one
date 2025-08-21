@@ -17,6 +17,7 @@ const Verfication =lazy(()=>import("../Auth/Verification"));
 const Register =lazy(()=>import("../Auth/Createnewaccount"));
 const Home =lazy(()=>import("../pages/Home"));
 const Services =lazy(()=>import('../pages/Services'));
+const Subservice=lazy(()=>import('../pages/Subservices'))
 const Error =lazy(()=>import('../pages/Error'));
 const Packages =lazy(()=>import("../pages/Packages"));
 const Aboutus =lazy(()=>import("../pages/Aboutus"));
@@ -53,6 +54,10 @@ const router=createBrowserRouter([{
          <Services/>
        </PageSuspenseFallback>
       )
+    },
+    {
+       path: '/services/subservices/:id',
+      element: <Subservice/>,
     },
     {
       path:'packages',

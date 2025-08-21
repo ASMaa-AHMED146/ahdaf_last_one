@@ -10,6 +10,12 @@ const initialState={
 const servicesSlice=createSlice({
     name:'services',
     initialState,
+    reducers:{
+        resetServices:(state)=>{
+            state.records=[];
+            state.loading='idle';
+        }
+    },
     extraReducers:(builder)=>{
         builder.addCase(actGetservices.pending,(state)=>{
             state.loading='pending';
@@ -27,3 +33,4 @@ const servicesSlice=createSlice({
     }
 })
 export default servicesSlice.reducer;
+export const {resetServices}=servicesSlice.actions;

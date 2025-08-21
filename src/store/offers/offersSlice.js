@@ -8,7 +8,7 @@ const initialState = {
 }
 
 const offersSlice = createSlice({
-    name: 'auth',
+    name: 'offer',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -19,7 +19,7 @@ const offersSlice = createSlice({
             })
             .addCase(actGetOffers.fulfilled, (state, action) => {                
                 state.loading = "succeeded";
-                state.records.push(action.payload)
+                state.records=(action.payload)
             })
             .addCase(actGetOffers.rejected, (state, action) => {
                 state.loading = "failed";

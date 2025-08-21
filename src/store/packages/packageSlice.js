@@ -8,7 +8,7 @@ const initialState = {
 }
 
 const feedSlice = createSlice({
-    name: 'auth',
+    name: 'package',
     initialState,
     reducers: {},
     extraReducers: (builder) => {
@@ -19,7 +19,7 @@ const feedSlice = createSlice({
             })
             .addCase(actGetPacksges.fulfilled, (state, action) => {                
                 state.loading = "succeeded";
-                state.items.push(action.payload)
+                state.items=(action.payload)
             })
             .addCase(actGetPacksges.rejected, (state, action) => {
                 state.loading = "failed";

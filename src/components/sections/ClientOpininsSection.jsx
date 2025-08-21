@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import actGetFeedback from '../../store/feedback/act/actGetFeedback';
 import Opinin from "../Items/ClientOpininItems";
-import '../../styles/ClientOpininsdotSlice.css'; 
+import '../../styles/ClientOpininsdotSlice.css';
 
 export default function ClientOpininsSection() {
     const dispatch = useDispatch();
@@ -30,20 +30,11 @@ export default function ClientOpininsSection() {
         return <div className="text-center p-10">...جاري تحميل آراء العملاء</div>;
     }
 
-    const next = () => {
-        if (swiperRef.current) {
-            swiperRef.current.slideNext();
-        }
-    };
-
-    const previous = () => {
-        if (swiperRef.current) {
-            swiperRef.current.slidePrev();
-        }
-    };
-
+    // Now, the `next` and `previous` functions are handled by Swiper's navigation.
+    // The manual functions are no longer needed.
+    
     return (
-        <div className="pb-[80px] px-4" dir="rtl">
+        <div className="pb-[27px] px-4" dir="rtl">
             <h2 className="font-[500] text-[30px] mb-[20px] text-start px-[40px]">
                 اراء عملائنا
             </h2>
@@ -54,6 +45,10 @@ export default function ClientOpininsSection() {
                     modules={[Pagination, Navigation]}
                     spaceBetween={16}
                     slidesPerView={1}
+                    navigation={{
+                        nextEl: '.custom-next-btn',
+                        prevEl: '.custom-prev-btn',
+                    }}
                     pagination={{
                         el: '.dots-container',
                         clickable: true,
@@ -79,18 +74,16 @@ export default function ClientOpininsSection() {
 
             <div className="flex items-center justify-center gap-6 mt-6 ">
                 <button
-                    onClick={previous}
-                    className="bg-[#F6F6F6] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#1A7474]  transition-all duration-300"
+                    className="custom-prev-btn bg-[#F6F6F6] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#1A7474] transition-all duration-300"
                     aria-label="السابق"
                 >
-                    <GrNext className="text-xl " style={{ color: '#707070' }} />
+                    <GrNext className="text-xl" style={{ color: '#707070' }} />
                 </button>
 
-                <div className="dots-container max-w-[200px] gap-[2px]  lg:max-w-[220px]  flex lg:gap-2 "></div>
+                <div className="dots-container max-w-[200px] gap-[2px] lg:max-w-[220px] flex lg:gap-2"></div>
 
                 <button
-                    onClick={next}
-                    className="bg-[#F6F6F6] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#1A7474] transition-all duration-300"
+                    className="custom-next-btn bg-[#F6F6F6] w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#1A7474] transition-all duration-300"
                     aria-label="التالي"
                 >
                     <GrPrevious className="text-xl hover:text-white" style={{ color: '#707070' }} />

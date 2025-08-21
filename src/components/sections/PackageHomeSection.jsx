@@ -18,8 +18,10 @@ export default function PackageHomeSection() {
 
     
     
-    const array=items[1]?.packages ||[];
-    const offers=records[2]?.offers || []
+    const array=items.packages || [];
+    const offers=records.offers || [];
+
+    
 
     if(loading==='pending')
     {

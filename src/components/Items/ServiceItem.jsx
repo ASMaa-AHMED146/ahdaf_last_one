@@ -4,7 +4,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function Item({ el, id }) {
   const nav = useNavigate();
-
+  console.log(el);
+  
   return (
     <div 
       className="px-2 pb-2.5 cursor-pointer group mt-5"
