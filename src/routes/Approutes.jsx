@@ -24,6 +24,8 @@ const Aboutus =lazy(()=>import("../pages/Aboutus"));
 const Callus =lazy(()=>import("../pages/CallUs"));
 const Offers =lazy(()=>import("../pages/Offers"));
 const Blog =lazy(()=>import("../pages/Blog"));
+const Booking=lazy(()=>import("../pages/Booking"));
+const PackageDetails=lazy(()=>import("../pages/Packagesdetails"))
 
 
 
@@ -57,7 +59,9 @@ const router=createBrowserRouter([{
     },
     {
        path: '/services/subservices/:id',
-      element: <Subservice/>,
+      element: <PageSuspenseFallback>
+        <Subservice/>
+      </PageSuspenseFallback>
     },
     {
       path:'packages',
@@ -66,12 +70,27 @@ const router=createBrowserRouter([{
           <Packages/>
         </PageSuspenseFallback>
       )
+    },
+    {
+       path: '/packages/packagesdetails/:id',
+      element: 
+      <PageSuspenseFallback>
+         <PackageDetails/>
+      </PageSuspenseFallback>
+     
     }
     ,
     {
       path:'aboutus',
       element:(
         <Aboutus/>
+      )
+    }
+    ,
+    {
+      path:'booking',
+      element:(
+        <Booking/>
       )
     }
     ,

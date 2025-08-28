@@ -6,8 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import useBackgroundimages from "../../hooks/useBackgroundimages";
 
 function Homebackgroundsection() {
-  // 👈 هنا قمنا بإعادة استخدام صور مختلفة
-  // const images = [img,img2,img ]; 
+
   const settings = {
     dots: false,
     infinite: true,

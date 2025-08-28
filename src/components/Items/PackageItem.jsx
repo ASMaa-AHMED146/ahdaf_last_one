@@ -6,7 +6,7 @@ export default function ServicesItem({ el }) {
   return (
     <div
       className='rounded-[10px] max-h-[500px] mx-[10px] lg:w-[420px] bg-[#8E8E8E29] cursor-pointer'
-      onClick={() => nav('/packets/Packagedetails')}
+      onClick={() => nav(`/packages/packagesdetails/${el.id}`)}
     >
       <div className="">
         <img

@@ -7,7 +7,7 @@ const actGetservices=createAsyncThunk('services/actGetservices',async(_,thunkAPI
     try{
         
         const response=await axios.get('https://api.dubai-hotel-service.com/public/api/services',{signal});
-        console.log(response.data)
+      
         return response.data.data;
     }catch(error)
     {

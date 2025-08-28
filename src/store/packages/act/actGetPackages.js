@@ -4,9 +4,9 @@ import axiosErrorHandler from "../../../utils/axiosErrorHandler"
 
 const actGetPacksges=createAsyncThunk('package/actGetPacksges',async(_,thunkAPI)=>{
     
-    const {rejectWithValue }=thunkAPI;
+    const {rejectWithValue,signal }=thunkAPI;
     try{
-        const res=await axios.get("https://api.dubai-hotel-service.com/public/api/packages")    
+        const res=await axios.get("https://api.dubai-hotel-service.com/public/api/packages",{signal})    
         return res.data;
     }catch(error)
     {

@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Item({ el, id }) {
   const nav = useNavigate();
-  console.log(el);
   
   return (
     <div 

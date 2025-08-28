@@ -32,7 +32,7 @@ const useregister=()=>{
     return()=>{
         dispatch(resetUI());
     }
-  },[])
+  },[dispatch])
 
   return {loading,error,errors,submitForm,register,handleSubmit}
 
