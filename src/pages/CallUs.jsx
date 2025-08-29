@@ -1,12 +1,14 @@
 import React from 'react'
 import { SlLocationPin } from "react-icons/sl";
 import Sendmessage from '../components/Items/Sendmessage';
-import Heading from "../components/common/Heading/Headind"
+import Heading from "../components/common/Heading/Headind";
+
 
 export default function Callus() {
+
   return (
 <div >
-  <Heading sub={'اتصل بنا'}/>
+  <Heading service={'اتصل بنا'}/>
       <div className='py-[50px] lg:px-[80px] px-[20px] flex flex-col'>
       <div className='flex gap-[30px] flex-col lg:flex-row'>
         <div className='lg:w-[60%] gap-[50px]'>

@@ -24,7 +24,8 @@ const authSlice=createSlice({
             state.error=null
         }).addCase(actAuthRegister.fulfilled,(state,action)=>{
             state.loading='succeeded';
-            console.log(action.payload);
+           state.user=action.payload.user;
+           state.accessToken=action.payload.token;
         }).addCase(actAuthRegister.rejected,(state,action)=>{
                 state.loading='failed'; 
                 console.log(action.payload);

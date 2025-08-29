@@ -25,7 +25,8 @@ const useregister=()=>{
   });
 
   const submitForm =async(data)=>{
-    dispatch(actAuthRegister(data))
+    console.log(data)
+    dispatch(actAuthRegister(data)).unwrap().then(()=>{navigate('/')})
   }
   
   useEffect(()=>{

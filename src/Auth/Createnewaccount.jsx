@@ -5,6 +5,7 @@ import Button from "../components/common/button/Button";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import useregister from "../hooks/useRegister";
+import CircularProgress from '@mui/material/CircularProgress';
 import "./inputstyle.css"
 
 export default function Createnewaccount() {
@@ -36,7 +37,7 @@ export default function Createnewaccount() {
              {
               error&& <p className="text-red-500 text-center text-[20px] ">{error}</p>
             }
-            <Button text={"انشاء حساب"} color="#1A7474" />
+            <Button text={loading === 'pending' ?(<> <CircularProgress size={20} color="#F36C35"/></>): <p>انشاء حساب</p>} color="#1A7474" />
            
           </form>
           <p className="text-center">

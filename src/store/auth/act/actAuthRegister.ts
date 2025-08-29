@@ -7,7 +7,7 @@ const actAuthRegister=createAsyncThunk("auth/actAuthRegister",async (formdata,th
     
     const {rejectWithValue }=thunkAPI;
     try{
-        const res= await axios.post('https://dubai.high-digitall.com/public/api/register',formdata);
+        const res= await axios.post('https://api.dubai-hotel-service.com/public/api/register',formdata);
         console.log(res.data);
         return res.data;
     }catch(error){
