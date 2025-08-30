@@ -24,21 +24,26 @@ import Slider from "../sliders/ServSlider";
 import Item from '../Items/ServicePage';
 
 export default function CommonSlider({ array, titleKey, descriptionKey }) {
-  const { t } = useTranslation();
-  const { isArabic } = useLanguage();
+  const { t } = useTranslation();
+  const { isArabic } = useLanguage();
 
-  return (
-    <div className=''>
-      <Slider 
-        title={titleKey ? t(titleKey) : t('homeServices.title')} 
-        paragraph={descriptionKey ? t(descriptionKey) : t('homeServices.description')}
-      >
-        {array?.map((el, index) => (
-          <SwiperSlide key={el.id || index} className=''> 
-            <Item id={el.id} el={el} />
-          </SwiperSlide>
-        ))}
-      </Slider>
-    </div>
-  )
+  // إذا كانت المصفوفة غير موجودة أو فارغة، لن يتم عرض الكومبوننت
+  if (!array || array.length === 0) {
+    return null; // يمكنك إرجاع null أو أي شيء فارغ
+  }
+
+  return (
+    <div className=''>
+      <Slider 
+        title={titleKey ? t(titleKey) :''} 
+        paragraph={descriptionKey ? t(descriptionKey) : ''}
+      >
+        {array.map((el, index) => (
+          <SwiperSlide key={el.id || index} className=''> 
+            <Item id={el.id} el={el} />
+          </SwiperSlide>
+        ))}
+      </Slider>
+    </div>
+  );
 }

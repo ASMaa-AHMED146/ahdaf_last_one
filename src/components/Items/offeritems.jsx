@@ -25,9 +25,9 @@ export default function ServicesItem({ el }) {
     return (
         <div
             className='rounded-[10px] max-h-[500px] mx-[10px] lg:w-[420px] bg-[#8E8E8E29] cursor-pointer mt-[15px] relative '
-            
+            onClick={()=>nav(`/offers/offerdetails/${el.id}`)}
         >
-            <div className="bg-[#F36C3575] absolute top-0 right-0 rounded-[10px] p-[10px] text-white" >{el.subtitle_ar}</div>
+            <div className="bg-[#F36C3575] absolute top-0 right-0 rounded-[10px] p-[10px] text-white" >{el.discount_percentage}%خصم</div>
             <div className="">
                 <img
                     className='rounded-[10px] bg-[#FFF7F4] w-full h-[350px] object-cover'

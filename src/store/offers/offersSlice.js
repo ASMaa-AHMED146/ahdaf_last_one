@@ -17,7 +17,7 @@ const offersSlice = createSlice({
                 state.loading = 'pending';
                 state.error = null;
             })
-            .addCase(actGetOffers.fulfilled, (state, action) => {                
+            .addCase(actGetOffers.fulfilled, (state, action) => {             
                 state.loading = "succeeded";
                 state.records=(action.payload)
             })
