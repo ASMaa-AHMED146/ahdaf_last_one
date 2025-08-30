@@ -3,14 +3,13 @@ import React from "react";
 import Logo from "../assets/images/logo.png";
 import Button from "../components/common/button/Button";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import useregister from "../hooks/useRegister";
 import CircularProgress from '@mui/material/CircularProgress';
+import Input from "./Input"
 import "./inputstyle.css"
 
 export default function Createnewaccount() {
   const nav = useNavigate();
-  const state = useSelector((state) => state.Auth);
   const { loading, error, errors, submitForm, register, handleSubmit } = useregister();
 
 
@@ -55,23 +54,23 @@ export default function Createnewaccount() {
   );
 }
 
-function Input({ label, type, name, register, errors }) {
-  // هذه الكلاسات هي التي تقوم بإزالة الأسهم
-  const noArrowsClasses = type === "number" ? "[appearance:textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-inner-spin-button]:m-0 " : "";
+// function Input({ label, type, name, register, errors }) {
+//   // هذه الكلاسات هي التي تقوم بإزالة الأسهم
+//   const noArrowsClasses = type === "number" ? "[appearance:textfield] [&::-webkit-outer-spin-button]:m-0 [&::-webkit-inner-spin-button]:m-0 " : "";
 
-  return (
-    <div className="my-[10px]">
-      <label htmlFor={name} className="text-[19px] text-[#2D2D2D] ">
-        {label}
-      </label>
-      <br />
-      <input
-        {...register(name)}
-        id={name}
-        type={type}
-        className={`border-[1px] border-[#DDDDDD] w-full mt-[5px] p-[8px] rounded-[8px] ${noArrowsClasses} ${errors?'border-[1px] border-red-500':""} `}
-      />
-      {errors && <p className="text-red-500">{errors}</p>}
-    </div>
-  );
-}
+//   return (
+//     <div className="my-[10px]">
+//       <label htmlFor={name} className="text-[19px] text-[#2D2D2D] ">
+//         {label}
+//       </label>
+//       <br />
+//       <input
+//         {...register(name)}
+//         id={name}
+//         type={type}
+//         className={`border-[1px] border-[#DDDDDD] w-full mt-[5px] p-[8px] rounded-[8px] ${noArrowsClasses} ${errors?'border-[1px] border-red-500':""} `}
+//       />
+//       {errors && <p className="text-red-500">{errors}</p>}
+//     </div>
+//   );
+// }

@@ -127,7 +127,7 @@ export default function Subservices() {
       </div> 
       <ClientOpininsSection/>
       <Ourprojects images={mainServiceImages}/>
-      <CommonSlider array={nameserviceData}/>
+      <CommonSlider array={nameserviceData} title={'خدمات اخري'}/>
     </div>
   );
 }

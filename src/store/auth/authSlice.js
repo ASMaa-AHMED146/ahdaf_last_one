@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import actAuthRegister from "./act/actAuthRegister";
-
+import actAuthLogin from "./act/actAuthLogin"
 
 const initialState={
     user:null,
@@ -27,6 +27,18 @@ const authSlice=createSlice({
            state.user=action.payload.user;
            state.accessToken=action.payload.token;
         }).addCase(actAuthRegister.rejected,(state,action)=>{
+                state.loading='failed'; 
+                console.log(action.payload);
+                state.error = action.payload;
+            
+        }).addCase(actAuthLogin.pending,(state)=>{
+            state.loading='pending';
+            state.error=null
+        }).addCase(actAuthLogin.fulfilled,(state,action)=>{
+            state.loading='succeeded';
+           state.user=action.payload.user;
+           state.accessToken=action.payload.token;
+        }).addCase(actAuthLogin.rejected,(state,action)=>{
                 state.loading='failed'; 
                 console.log(action.payload);
                 state.error = action.payload;

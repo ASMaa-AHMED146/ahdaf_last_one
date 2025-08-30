@@ -19,11 +19,12 @@ export default function Packagesdetails() {
 
   const {items,error,loading}=useSelector((state)=>state.package);
   const data=items?.packages || [];
-  console.log(data);
+  const other=data.filter((el)=>(el.id != id));
   
   const selecteditem=data.filter((el)=>(
     el.id==id
-  )) 
+  ));
+
   if(loading==='pending')
     {
       return <div className='h-[350px] w-full flex items-center justify-center flex-col gap-[20px]'>
@@ -31,6 +32,8 @@ export default function Packagesdetails() {
         <p className='text-blue-500'>loading...</p>
       </div>
     }
+    const Packageservicedata=selecteditem[0]?.sub_services || [];
+    const Array=Packageservicedata.map((el)=>(el.description_ar));
 
     if(error)
   {
@@ -40,23 +43,23 @@ export default function Packagesdetails() {
   return (
     <div>
       <Heading service={'الباقات'} sub={selecteditem[0]?.title_ar|| 'خدمة فرعية'}/>
-       <div className='px-[150px] py-[50px]  '>
+       <div className='px-[150px] pt-[50px]  '>
                  {
         selecteditem?(
           <div>
                   <img src={selecteditem[0]?.image} alt="" className='rounded-[20px] h-[450px] w-full' />
                   <div className='p-[20px]'>
-                    <p className='font-[500] text-[24px] '>{selecteditem[0]?.title_ar|| 'خدمة فرعية'}</p>
-                    {/* <p className='text-[#707070] font-[500] mt-[12px]'>باقة شاملة للتصليح والصيانة لضمان أفضل أداء لممتلكاتك</p> */}
+                    <p className='font-[400] text-[24px] '>{selecteditem[0]?.title_ar|| 'خدمة فرعية'}</p>
+                    <p className='text-[#707070] text-[24px] font-[400] mt-[12px]'>{selecteditem[0]?.subtitle_ar}</p>
                   </div>
                 </div>
         ):<LottieHandler type={"empty"}/>
       } 
-      <Packageservice/>
+      <Packageservice Array={Array}/>
       <Commonfaq/>
               </div>
 
-      <CommonSlider array={data}/>
+      <CommonSlider array={other} title={'باقات اخري'}/>
     </div>
   )
 }

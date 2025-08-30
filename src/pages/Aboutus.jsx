@@ -5,8 +5,18 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import sec from "../assets/images/section2aboutus.jpg"
 import { useNavigate } from "react-router-dom";
+import { useDispatch ,useSelector} from 'react-redux';
+import { useEffect } from 'react';
+import actGetabout from '../store/aboutus/actGetabout';
 
 export default function Aboutus() {
+  const dispatch=useDispatch();
+  const {items,loading,error}=useSelector((state)=>state.about);
+  console.log(items[0]);
+  useEffect(()=>{
+    dispatch(actGetabout())
+  },[dispatch])
+  
   const nav=useNavigate();
   return (
     <div>
@@ -15,7 +25,7 @@ export default function Aboutus() {
         <div className='rounded-[10px] overflow-hidden lg:h-[550px] h-[220px]  lg:py-[50px] lg:px-[100px] relative lg:mb-[50px]'><img className=' w-full absolute top-[-110px] right-[0px]' src={main} alt='about img'/></div>
         <div className=''>
           <p className='border-b-[3px] border-b-[#F36C35] font-[400] text-[32px] w-fit mb-[15px]'>من نحن</p>
-          <p className='font-[300] lg:text-[29px] text-[25px] '>نحن نجعل الأماكن نظيفة ومشرقة</p>
+          <p className='font-[300] lg:text-[29px] text-[25px] '>{items[0]?.title_ar}</p>
         </div>
         <div className='mt-[15px]'>
           <Item paragraph={'نحن نواكب أحدث التقنيات في عالم التنظيف. سواء كانت الأدوات أو المواد، نحن نستخدم كل جديد لضمان نظافة صحية وآمنة'} head={'التقنيات المتقدمة'}/>
@@ -47,23 +57,23 @@ function Item({paragraph ,head})
   )
 }
 
-function Company()
+function Company({data})
 {
-  return(
-    <>
-      <div className='flex gap-[20px]'>
-        <div className='border-[1px] border-[#F36C35] rounded-[5px] overflow-hidden max-w-[50%] '>
-          <img className='' src={sec}/>
-        </div>
-        <div className='max-w-[50%]'>
-          <h1 className='border-b-[3px] border-b-[#1A7474] font-[450] text-[32px] w-fit '>عن شركتنا</h1>
-          <p className='my-[15px] text-[24px] font-[400]'>الالتزام تجاة عملائنا</p>
-          <p className='flex items-center gap-[5px] text-[#F36C35] text-[25px]'><FaRegCircleCheck className='text-[20px]' style={{color:'#F36C35'}}/>
-              مهمتنا</p>
-                      <p className='text-[#707070] text-[23px] leading-[40px]'>مهمتنا في Dubai Hotel Service هي تقديم خدمات تنظيف وتعقيم عالية الجودة تضمن لعملائنا بيئة صحية وآمنة. نحن نلتزم بالاحترافية والدقة في كل خدمة نقدمها، ونسعى دائمًا لتجاوز توقعات عملائنا من خلال استخدام أحدث الأساليب والتقنيات في مجال التنظيف. هدفنا هو خلق بيئات نظيفة وآمنة تسهم في تحسين جودة الحياة في كل مكان نعمل فيه، سواء كانت منازل، مكاتب أو منشآت تجارية.</p>
-        </div>
+  return(
+    <>
+      <div className='flex gap-[20px]'>
+        <div className='border-[1px] border-[#F36C35] rounded-[5px] overflow-hidden max-w-[50%] '>
+          <img className='' src={data?.image || sec}/>
+        </div>
+        <div className='max-w-[50%]'>
+          <h1 className='border-b-[3px] border-b-[#1A7474] font-[450] text-[32px] w-fit '>عن شركتنا</h1>
+          <p className='my-[15px] text-[24px] font-[400]'>{data?.title_ar}</p>
+          <p className='flex items-center gap-[5px] text-[#F36C35] text-[25px]'><FaRegCircleCheck className='text-[20px]' style={{color:'#F36C35'}}/>
+              {data?.subtitles_ar[0]}</p>
+                      <p className='text-[#707070] text-[23px] leading-[40px]'>{data?.descriptions_ar[0]}</p>
+        </div>
 
-      </div>
-    </>
-  )
+      </div>
+    </>
+  )
 }

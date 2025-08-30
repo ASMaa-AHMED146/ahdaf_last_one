@@ -6,8 +6,11 @@ import { FaRegCircleCheck } from "react-icons/fa6";
 import { BiPhoneCall } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
 import { useNavigate } from 'react-router-dom';
+import { array } from 'zod';
 
-export default function Service() {
+export default function Service({Array}) {
+    console.log(Array);
+    
     const [showservices, setshowservices] = useState(true);
     const nav=useNavigate();
 
@@ -35,10 +38,9 @@ export default function Service() {
             {
                 showservices && (
                     <>
-                        <Item />
-                        <Item />
-                        <Item />
-                        <Item />
+                    {
+                        Array.map((el,index)=>(<Item el={el} key={index}/>))
+                    }
                     </>
                 )
             }
@@ -57,12 +59,12 @@ export default function Service() {
     )
 }
 
-function Item() {
+function Item({el}) {
     return (
         <>
             <div className='flex gap-[18px] mt-[30px]'> 
                 <FaRegCircleCheck className='text-[45px]' style={{color:'#F36C35'}} />
-                <p className='font-[400] text-[24px] text-[#707070]'>خدمات إصلاح كهربائية احترافية لجميع احتياجات منزلك. نتعامل مع كل شيء من إصلاح المنافذ والمفاتيح إلى استكشاف المشكلات الكهربائية المعقدة وإصلاحها، مما يضمن عمل الأنظمة الكهربائية في منزلك بأمان وكفاءة.</p>
+                <p className='font-[400] text-[24px] text-[#707070]'>{el} </p>
             </div>
         </>
     )
