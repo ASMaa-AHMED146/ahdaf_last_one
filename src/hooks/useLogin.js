@@ -26,10 +26,11 @@ const userLogin=()=>{
 
   const submitForm =async(data)=>{
     console.log(data)
-    dispatch(actAuthLogin(data)).unwrap().then(()=>{navigate('/auth/verfication')})
+    dispatch(actAuthLogin(data)).unwrap().then(()=>{navigate('/')})
   }
   
   useEffect(()=>{
+    dispatch(resetUI());
     return()=>{
         dispatch(resetUI());
     }
