@@ -51,6 +51,53 @@ const resources = {
         description: "What our customers say about our services",
         defaultComment: "Excellent service!",
       },
+      packages: {
+        title: "Our Packages Designed Just for You",
+        description:
+          "Explore a variety of packages that suit all your needs, whether for cleaning, sterilization, or maintenance services. Choose the perfect package for you and enjoy peace of mind and quality service.",
+      },
+      offers: {
+        title: "Our Special Offers Await You!",
+        description:
+          "Discover a range of exclusive offers that provide our premium services at competitive prices. Don't miss the opportunity and take advantage of the best deals for cleaning and sterilizing your home professionally.",
+      },
+      servicesItem: {
+        imageAlt: "Service photo",
+      },
+      footer: {
+        logoAlt: "Company Logo",
+        description:
+          "With our professional services, your peace of mind starts here. We provide comprehensive cleaning and sterilization solutions to ensure a healthy environment for you and your family.",
+        services: {
+          title: "Our Services",
+          furnished: "Furnished Rental Services",
+          home: "Home Services",
+          finishing: "Finishing and Decoration Services",
+          maintenance: "Repair and Maintenance Services",
+          other: "Other Services",
+        },
+        links: {
+          title: "Links",
+          home: "Home",
+          services: "Services",
+          contact: "Contact Us",
+          packages: "Packages",
+          about: "About Us",
+          blog: "Blog",
+          privacy: "Privacy Policy",
+        },
+        contact: {
+          title: "Contact Us",
+          egyptOffice: "Egypt Booking Office",
+          newCairo: "New Cairo 270 Al Andalus Building in front of Hyde Park",
+          mansoura: "Mansoura - 20 Ahmed Maher Street",
+          phone: "01090009330",
+          uaeOffice: "UAE Booking Office",
+          dubai: "15 Al Barsha 1 Street, Dubai, United Arab Emirates",
+        },
+        copyright:
+          "All rights reserved to Dubai-Hotel-Service Company. Designed by Ahdaf Web",
+      },
     },
   },
   ar: {
@@ -99,6 +146,53 @@ const resources = {
         title: "آراء العملاء",
         description: "ماذا يقول عملاؤنا عن خدماتنا",
         defaultComment: "ولا اروع",
+      },
+      packages: {
+        title: "باقاتنا المصممة خصيصًا لك",
+        description:
+          "استكشف مجموعة متنوعة من الباقات التي تناسب جميع احتياجاتك، سواء للتنظيف، التعقيم، أو خدمات الصيانة. اختر الباقة المثالية لك واستمتع براحة البال وجودة الخدمة.",
+      },
+      offers: {
+        title: "عروضنا المميزة بانتظارك!",
+        description:
+          "اكتشف مجموعة من العروض الحصرية التي توفر لك خدماتنا المميزة بأسعار تنافسية. لا تفوت الفرصة، واغتنم أفضل الصفقات لتنظيف وتعقيم منزلك بكل احترافية.",
+      },
+      servicesItem: {
+        imageAlt: "صورة الخدمة",
+      },
+      footer: {
+        logoAlt: "شعار الشركة",
+        description:
+          "مع خدماتنا الاحترافية، راحة بالك تبدأ من هنا. نقدم حلول تنظيف وتعقيم متكاملة لضمان بيئة صحية لك ولعائلتك.",
+        services: {
+          title: "خدماتنا",
+          furnished: "خدمات تاجير مفروش",
+          home: "خدمات منزلية",
+          finishing: "خدمات التشطيب والديكور",
+          maintenance: "خدمات تصليح وصيانة",
+          other: "خدمات اخرى",
+        },
+        links: {
+          title: "لينكات",
+          home: "الرئيسية",
+          services: "الخدمات",
+          contact: "اتصل بنا",
+          packages: "الباقات",
+          about: "من نحن",
+          blog: "المدونة",
+          privacy: "سياسة الخصوصية",
+        },
+        contact: {
+          title: "اتصل بنا",
+          egyptOffice: "مكتب حجز جمهوريه مصر العربيه",
+          newCairo: "القاهره الجديده 270 عماره الاندلس امام هايد بارك",
+          mansoura: "المنصوره - 20 شارع احمد ماهر",
+          phone: "01090009330",
+          uaeOffice: "مكتب حجز الامارات العربيه",
+          dubai: "15 شارع البرشاء 1 دبي الإمارات العربية المتحدة",
+        },
+        copyright:
+          "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service . تصميم بواسطة Ahdaf Web",
       },
     },
   },
