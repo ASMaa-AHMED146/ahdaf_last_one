@@ -2,7 +2,8 @@ import React from 'react'
 import Heading from '../components/common/Heading/Headind'
 import { useEffect } from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import actGetPolice from "../store/Police/actGetPolice"
+import actGetPolice from "../store/Police/actGetPolice";
+import { LuDot } from "react-icons/lu";
 
 export default function PrivacyPolicies() {
     const dispatch=useDispatch();
@@ -13,19 +14,19 @@ export default function PrivacyPolicies() {
     const data=items.data || []
     console.log(data);
     
-    console.log(data[0]?.title.ar );
-    
+
   return (
     <div>
       <Heading service={'السياسه و الخصوصيه'}/>
      <div>
-        <div>
-            <h1>{data[0]?.title.ar}</h1>
-            <p>{data[0]?.description.ar}</p>
-        </div>
-        <div>
-            <h1>1.{}</h1>
-        </div>
+        {
+            data.map((el,index)=>(
+                <div className='px-[50px] py-[25px]' key={index}>
+            <h1 className='text-[28px] font-[400]'> {index>0?`${index}.`:''}{el?.title.ar}</h1>
+            <p className='flex text-[#707070] text-[25px]  pt-[10px] items-center'><LuDot size={30}/>{el?.description.ar}</p>
+            </div>
+                    ))
+        }
      </div>
     </div>
   )
