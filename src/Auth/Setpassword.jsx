@@ -19,8 +19,11 @@ export default function Setpassword() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error: reduxError } = useSelector((state) => state.password);
-  console.log(loading)
-  const email=useSelector((state)=>state.auth.user.email);
+  const state=useSelector((state)=>state);
+
+  console.log(state)
+
+  
 
   const {
     register,
