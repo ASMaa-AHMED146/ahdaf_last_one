@@ -13,6 +13,7 @@ import categoriesReducer from "./categories/categoriesSlice";
 import posts from "./posts/postsSlice";
 import Password  from "./forgetpassword/passwordSlice"
 import setPassword from "./setPassword/setPasswordSlice"
+import Police from "./Police/PoliceSlice"
 import {
   persistStore,
   persistReducer,
@@ -39,7 +40,7 @@ const authPersistConfig={
 const rootReducer=combineReducers({
       auth:persistReducer(authPersistConfig,auth)
     ,serv:services,feed:feedback,package:packages,offer:offers,faq:Faq,subservice:sub,
-    verf:verfy,about:aboutus, categories: categoriesReducer,posts:posts,password:Password,setPassword: setPassword
+    verf:verfy,about:aboutus, categories: categoriesReducer,posts:posts,password:Password,setPassword: setPassword,police:Police
 })
 
 const persistedReducer=persistReducer(rootPersistConfig,rootReducer)

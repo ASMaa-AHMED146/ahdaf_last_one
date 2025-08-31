@@ -30,7 +30,8 @@ const PackageDetails = lazy(() => import("../pages/Packagesdetails"));
 const EmailVerfy=lazy(()=>import('../Auth/verfEmail'));
 const CodeVerfy=lazy(()=>import('../Auth/Verification'))
 const Offerdetails=lazy(()=>import('../pages/Offerdetails'));
-const Setpassword=lazy(()=>import('../Auth/Setpassword'))
+const Setpassword=lazy(()=>import('../Auth/Setpassword'));
+const Police=lazy(()=>import('../pages/PrivacyPolicies'))
 
 
 const router = createBrowserRouter([{
@@ -65,6 +66,12 @@ const router = createBrowserRouter([{
       path: '/services/subservices/:id',
       element: <PageSuspenseFallback>
         <Subservice />
+      </PageSuspenseFallback>
+    },
+    {
+      path: '/police',
+      element: <PageSuspenseFallback>
+        <Police />
       </PageSuspenseFallback>
     },
     {
