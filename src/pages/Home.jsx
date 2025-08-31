@@ -17,7 +17,7 @@ export default function Home() {
   
   return (
     <div>
-      <Homebackgroundsection/>
+      <Homebackgroundsection />
       <Countersection/>
       <ServicesSlider records={records}/>
       <FeedbacksSection/>
