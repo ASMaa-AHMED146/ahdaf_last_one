@@ -110,6 +110,13 @@ const resources = {
         },
         copyright: "All rights reserved to Dubai-Hotel-Service Company. Designed by Ahdaf Web"
       }
+      aboutus: {
+        pageTitle: "About Us",
+        whoWeAre: "Who We Are",
+        contactUs: "Contact Us",
+        bookService: "Book Your Service Now",
+        aboutCompany: "About Our Company",
+      },
     }
   },
   ar: {
@@ -218,10 +225,11 @@ const resources = {
           uaeOffice: "مكتب حجز الإمارات العربية",
           dubai: "15 شارع البرشاء 1 دبي، الإمارات العربية المتحدة"
         },
-        copyright: "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service. تصميم بواسطة أهداف ويب"
-      }
-    }
-  }
+        copyright:
+          "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service . تصميم بواسطة Ahdaf Web",
+      },
+    },
+  },
 };
 
 // Custom language detector
