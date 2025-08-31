@@ -1,62 +1,101 @@
-import React from 'react'
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import schema from "../../validtions/callingSchema"
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import schema from '../../validtions/callingSchema';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Sendmessage() {
-    const {
-            register,
-            handleSubmit,
-            reset,
-            formState: { errors },
-          } = useForm({
-            mode: "onBlur",
-            resolver: zodResolver(schema),
-          });
+  const { t } = useTranslation();
+  const { isArabic } = useLanguage();
 
-         const submitForm = (data) => {
-        console.log(data);
-        const message = `
-         رسالة جديدة:
-         الاسم: ${data.name}
-         البريد الإلكتروني: ${data.email}
-         الاستفسار: ${data.message}
-         `;
-        const phoneNumber = "201098757146"; // رقم الواتساب مع رمز الدولة
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-        window.open(whatsappUrl, "_blank");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    mode: 'onBlur',
+    resolver: zodResolver(schema),
+  });
 
-        // إعادة ضبط النموذج بعد إرساله
-        setTimeout(() => {
-            reset();
-            window.location.reload();
-        }, 2000);
-    };
+  const submitForm = (data) => {
+    console.log(data);
+    const message = `
+      ${t('sendmessage.messageHeader')}:
+      ${t('sendmessage.nameLabel')}: ${data.name}
+      ${t('sendmessage.emailLabel')}: ${data.email}
+      ${t('sendmessage.messageLabel')}: ${data.message}
+    `;
+    const phoneNumber = '201098757146'; // WhatsApp number with country code
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
 
-
+    // Reset form after submission
+    setTimeout(() => {
+      reset();
+      window.location.reload();
+    }, 2000);
+  };
 
   return (
-    <form className=' px-[30px] lg:py-[10px] ' onSubmit={handleSubmit(submitForm)}>
-      <div className='text-center'>ارسال رساله</div>
-      <div >
-        <label htmlFor="name" className=''>الاسم</label>
-         <br />
-        <input {...register('name')}  id='name' type="text" className='border-[#C2C2C2] border-[1px] w-full rounded-[5px] p-[5px] mt-[7px]' />
-        {errors.name?.message && <p className="text-red-500">{errors.name?.message}</p>}
+    <form
+      className="px-8 lg:py-2"
+      onSubmit={handleSubmit(submitForm)}
+      dir={isArabic ? 'rtl' : 'ltr'}
+    >
+      <div className="text-center text-lg font-semibold mb-4">
+        {t('sendmessage.formTitle')}
       </div>
-      <div className='my-[10px]'>
-        <label htmlFor="email">البريد الالكتروني</label>
-         <br />
-        <input {...register('email')} id='email' type="email" className='border-[#C2C2C2] border-[1px] w-full rounded-[5px] p-[5px] mt-[7px]'/>
-        {errors.email?.message && <p className="text-red-500">{errors.email?.message}</p>}
+      <div className="mb-4">
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          {t('sendmessage.nameLabel')}
+        </label>
+        <input
+          {...register('name')}
+          id="name"
+          type="text"
+          className="mt-1.5 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-orange-500"
+        />
+        {errors.name?.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.name?.message}</p>
+        )}
       </div>
-      <div>
-        <label htmlFor="textarea">استفسارك</label>
-         <br />
-        <textarea {...register('message')}  cols={20} id="textarea" className='border-[#C2C2C2] resize-none border-[1px] w-full rounded-[5px] p-[5px] mt-[7px]  '></textarea>
-        {errors.message?.message && <p className="text-red-500">{errors.message?.message}</p>}
+      <div className="my-4">
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          {t('sendmessage.emailLabel')}
+        </label>
+        <input
+          {...register('email')}
+          id="email"
+          type="email"
+          className="mt-1.5 w-full rounded-md border border-gray-300 p-2 focus:ring-2 focus:ring-orange-500"
+        />
+        {errors.email?.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.email?.message}</p>
+        )}
       </div>
-      <button className='bg-[#F36C35] cursor-pointer text-white w-full py-[8px] my-[17px] rounded-[10px]'>ارسال</button>
+      <div className="mb-4">
+        <label htmlFor="textarea" className="block text-sm font-medium text-gray-700">
+          {t('sendmessage.messageLabel')}
+        </label>
+        <textarea
+          {...register('message')}
+          id="textarea"
+          cols={20}
+          rows={5}
+          className="mt-1.5 w-full rounded-md border border-gray-300 p-2 resize-none focus:ring-2 focus:ring-orange-500"
+        ></textarea>
+        {errors.message?.message && (
+          <p className="text-red-500 text-sm mt-1">{errors.message?.message}</p>
+        )}
+      </div>
+      <button
+        type="submit"
+        className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 rounded-lg transition-colors"
+      >
+        {t('sendmessage.submitButton')}
+      </button>
     </form>
-  )
+  );
 }

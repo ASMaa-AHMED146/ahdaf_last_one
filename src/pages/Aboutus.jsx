@@ -103,7 +103,7 @@ import Heading from "../components/common/Heading/Headind"
 import main from "../assets/images/Aboutas.jpg"
 import { FaRegCircleCheck } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
-import sec from "../assets/images/section2aboutus.jpg"
+// import sec from "../assets/images/section2aboutus.jpg"
 import { useNavigate } from "react-router-dom";
 import { useDispatch ,useSelector} from 'react-redux';
 import { useEffect } from 'react';
@@ -164,19 +164,23 @@ export default function Aboutus() {
   )
 }
 
-function Item({paragraph ,head})
-{
-  return(
-    <>
-        <div className='border-[1px] border-[#EFEFEF] rounded-[5px] p-[20px] mt-[10px] '>
-            <div className='flex items-center gap-[10px]'>
-              <FaRegCircleCheck className='text-[20px]' style={{color:'#F36C35'}}/>
-              <h2 className='text-[#1A7474] lg:text-[25px]'>{head}</h2>
-            </div>
-            <p className='font-[400] lg:text-[24px] text-[#707070]'>{paragraph}</p>
-        </div>
-    </>
-  )
+function Item({ paragraph, head }) {
+  const { t } = useTranslation();
+  const { isArabic } = useLanguage();
+
+  return (
+    <div className="border-[1px] border-[#EFEFEF] rounded-[5px] p-[20px] mt-[10px]">
+      <div className={`flex items-center gap-[10px] ${isArabic ? 'flex-row-reverse' : ''}`}>
+        <FaRegCircleCheck className="text-[20px]" style={{ color: '#F36C35' }} />
+        <h2 className={`text-[#1A7474] lg:text-[25px] ${isArabic ? 'text-right' : ''}`}>
+          {t(head)}
+        </h2>
+      </div>
+      <p className={`font-[400] lg:text-[24px] text-[#707070] ${isArabic ? 'text-right' : ''}`}>
+        {t(paragraph)}
+      </p>
+    </div>
+  );
 }
 
 function Company({sectitem})
