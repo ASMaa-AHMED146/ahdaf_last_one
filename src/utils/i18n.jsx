@@ -98,6 +98,13 @@ const resources = {
         copyright:
           "All rights reserved to Dubai-Hotel-Service Company. Designed by Ahdaf Web",
       },
+      aboutus: {
+        pageTitle: "About Us",
+        whoWeAre: "Who We Are",
+        contactUs: "Contact Us",
+        bookService: "Book Your Service Now",
+        aboutCompany: "About Our Company",
+      },
     },
   },
   ar: {
@@ -193,6 +200,13 @@ const resources = {
         },
         copyright:
           "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service . تصميم بواسطة Ahdaf Web",
+      },
+      aboutus: {
+        pageTitle: "من نحن",
+        whoWeAre: "من نحن",
+        contactUs: "اتصل بنا",
+        bookService: "احجز خدمتك الان",
+        aboutCompany: "عن شركتنا",
       },
     },
   },
