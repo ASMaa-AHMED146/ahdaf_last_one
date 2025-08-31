@@ -36,7 +36,7 @@ export default function ServicesItem({ el }) {
         >
             {discountPercentage > 0 && (
                 <div className="bg-[#F36C3575] absolute top-0 left-0 rounded-[10px] p-[10px] text-white">
-                    {t('servicesItem.discount', { percentage: discountPercentage })}
+                    {t('servicesItem.discount')} {discountPercentage}%
                 </div>
             )}
             <div className="">

@@ -5,7 +5,7 @@ const resources = {
   en: {
     translation: {
       servicesItem: {
-        discount: "{percentage}% Discount",
+        discount: "Discount",
         imageAlt: "Service photo"
       },
       commonQuestion: {
@@ -122,7 +122,7 @@ const resources = {
   ar: {
     translation: {
       servicesItem: {
-        discount: "{percentage}% خصم",
+        discount: "خصم",
         imageAlt: "صورة الخدمة"
       },
       commonQuestion: {
