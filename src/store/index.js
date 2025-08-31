@@ -10,7 +10,9 @@ import storage from "redux-persist/lib/storage";
 import verfy from "./varfication/verfyrSlice";
 import aboutus from "./aboutus/aboutSlice";
 import categoriesReducer from "./categories/categoriesSlice"; 
-import posts from "./posts/postsSlice"
+import posts from "./posts/postsSlice";
+import Password  from "./forgetpassword/passwordSlice"
+
 import {
   persistStore,
   persistReducer,
@@ -37,7 +39,7 @@ const authPersistConfig={
 const rootReducer=combineReducers({
       auth:persistReducer(authPersistConfig,auth)
     ,serv:services,feed:feedback,package:packages,offer:offers,faq:Faq,subservice:sub,
-    verf:verfy,about:aboutus, categories: categoriesReducer,posts:posts,
+    verf:verfy,about:aboutus, categories: categoriesReducer,posts:posts,password:Password
 })
 
 const persistedReducer=persistReducer(rootPersistConfig,rootReducer)
