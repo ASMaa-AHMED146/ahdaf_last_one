@@ -7,7 +7,7 @@ const actGetpassword=createAsyncThunk("password/actGetpassword",async (formdata,
     
     const {rejectWithValue }=thunkAPI;
     try{
-        const res= await axios.post('http://apidigital.ahdafweb.com/public/api/password/reset',formdata);
+        const res= await axios.post('https://api.dubai-hotel-service.com/public/api/password/reset',formdata);
         console.log(res.data);
         return res.data;
     }catch(error){
