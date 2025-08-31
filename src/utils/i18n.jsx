@@ -4,6 +4,7 @@ import { initReactI18next } from "react-i18next";
 const resources = {
   en: {
     translation: {
+      home: "Home",
       servicesItem: {
         discount: "Discount",
         imageAlt: "Service photo"
@@ -115,12 +116,29 @@ const resources = {
         whoWeAre: "Who We Are",
         contactUs: "Contact Us",
         bookService: "Book Your Service Now",
-        aboutCompany: "About Our Company",
+        aboutCompany: "About Our Company"
       },
+      packagesDetails: {
+        packages: "Packages",
+        loading: "Loading...",
+        itemNotFound: "Item not found.",
+        error: "Error: {error}",
+        imageAlt: "Package image",
+        defaultTitle: "Sub-service",
+        offerValidUntil: "Offer valid until",
+        otherServices: "Other Services"
+      },
+      offersPage: {
+        title: "Offers",
+        loading: "Loading offers...",
+        error: "Error: {error}",
+        noOffers: "No offers available."
+      }
     }
   },
   ar: {
     translation: {
+      home: "الرئيسية",
       servicesItem: {
         discount: "خصم",
         imageAlt: "صورة الخدمة"
@@ -225,11 +243,33 @@ const resources = {
           uaeOffice: "مكتب حجز الإمارات العربية",
           dubai: "15 شارع البرشاء 1 دبي، الإمارات العربية المتحدة"
         },
-        copyright:
-          "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service . تصميم بواسطة Ahdaf Web",
+        copyright: "جميع الحقوق محفوظة لشركة Dubai-Hotel-Service . تصميم بواسطة Ahdaf Web"
       },
-    },
-  },
+      aboutus: {
+        pageTitle: "من نحن",
+        whoWeAre: "من نحن",
+        contactUs: "اتصل بنا",
+        bookService: "احجز خدمتك الآن",
+        aboutCompany: "عن شركتنا"
+      },
+      packagesDetails: {
+        packages: "الباقات",
+        loading: "جارٍ التحميل...",
+        itemNotFound: "العنصر غير موجود.",
+        error: "خطأ: {error}",
+        imageAlt: "صورة الباقة",
+        defaultTitle: "خدمة فرعية",
+        offerValidUntil: "العرض ساري حتى",
+        otherServices: "خدمات أخرى"
+      },
+      offersPage: {
+        title: "عروضنا",
+        loading: "جارٍ تحميل العروض...",
+        error: "خطأ: {error}",
+        noOffers: "لا توجد عروض متاحة."
+      }
+    }
+  }
 };
 
 // Custom language detector
