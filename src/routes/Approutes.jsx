@@ -28,7 +28,8 @@ const Booking = lazy(() => import("../pages/Booking"));
 const PackageDetails = lazy(() => import("../pages/Packagesdetails"));
 const EmailVerfy=lazy(()=>import('../Auth/verfEmail'));
 const CodeVerfy=lazy(()=>import('../Auth/Verification'))
-const Offerdetails=lazy(()=>import('../pages/Offerdetails'))
+const Offerdetails=lazy(()=>import('../pages/Offerdetails'));
+const Setpassword=lazy(()=>import('../Auth/Setpassword'))
 
 
 
@@ -145,6 +146,13 @@ const router = createBrowserRouter([{
       path: 'login',
       element: (
         <Register />
+      )
+    }
+    ,
+    {
+      path: 'setpassword',
+      element: (
+        <Setpassword />
       )
     }
     ,

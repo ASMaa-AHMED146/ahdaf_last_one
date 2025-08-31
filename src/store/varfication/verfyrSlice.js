@@ -4,7 +4,8 @@ import actCdeverfy from "./actCodeVerfy";
 
 const initialState = {
     error:null,
-    loading:'idle'
+    loading:'idle',
+    email:null
 }
 
 const verfyrSlice = createSlice({
@@ -22,8 +23,9 @@ const verfyrSlice = createSlice({
                 state.loading = 'pending';
                 state.error = null;
             })
-            .addCase(actEmailVerfy.fulfilled, (state) => {                
+            .addCase(actEmailVerfy.fulfilled, (state,action) => {                
                 state.loading = "succeeded";
+                console.log(action.payload);
             })
             .addCase(actEmailVerfy.rejected, (state, action) => {
                 state.loading = "failed";
