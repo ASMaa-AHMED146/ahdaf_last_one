@@ -24,13 +24,13 @@ const Aboutus = lazy(() => import("../pages/Aboutus"));
 const Callus = lazy(() => import("../pages/CallUs"));
 const Offers = lazy(() => import("../pages/Offers"));
 const Blog = lazy(() => import("../pages/Blog"));
+const Posts = lazy(() => import("../pages/Posts"));
 const Booking = lazy(() => import("../pages/Booking"));
 const PackageDetails = lazy(() => import("../pages/Packagesdetails"));
 const EmailVerfy=lazy(()=>import('../Auth/verfEmail'));
 const CodeVerfy=lazy(()=>import('../Auth/Verification'))
 const Offerdetails=lazy(()=>import('../pages/Offerdetails'));
 const Setpassword=lazy(()=>import('../Auth/Setpassword'))
-
 
 
 const router = createBrowserRouter([{
@@ -123,6 +123,13 @@ const router = createBrowserRouter([{
       path: 'blog',
       element: (
         <Blog />
+      )
+    }
+    ,
+    {
+      path: 'post/:id',
+      element: (
+        <Posts />
       )
     }
   ]
