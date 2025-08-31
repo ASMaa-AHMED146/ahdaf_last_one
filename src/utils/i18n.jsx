@@ -109,7 +109,7 @@ const resources = {
           dubai: "15 Al Barsha 1 Street, Dubai, United Arab Emirates"
         },
         copyright: "All rights reserved to Dubai-Hotel-Service Company. Designed by Ahdaf Web"
-      }
+      },
       aboutus: {
         pageTitle: "About Us",
         whoWeAre: "Who We Are",
