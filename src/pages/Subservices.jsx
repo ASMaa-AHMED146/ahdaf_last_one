@@ -117,10 +117,10 @@ export default function Subservices() {
         </div>
       </div> 
 
-      <div className='text-center'>
+      <div className='text-center '>
         <Link 
           to='/booking' 
-          className='text-[#F36C35] border-[1px] border-[#F36C35] py-[12px] w-[90%] max-lg:mt-[20px] text-[20px] lg:w-[35%] rounded-[15px] block m-auto'
+          className='text-[#F36C35] border-[1px] mt-[50px] border-[#F36C35] py-[12px] w-[90%] max-lg:mt-[20px] text-[20px] lg:w-[35%] rounded-[15px] block m-auto'
         >
           احجز الان
         </Link>
